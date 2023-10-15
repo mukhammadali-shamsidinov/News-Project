@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %} Search {% endblock title %}
+
+{% block content %}
+<div class="row">
+<div class="col">
+    <h1>Searchs</h1>
+    {% for yangilik in yangilik %}
+        <a href="{% url 'news_detail' yangilik.slug %}">
+         <h1>
+        <p>{{ yangilik.title }}</p>
+            <img src="{{ yangilik.image.url }}" width="30%" alt="">
+        </h1>
+        </a>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}

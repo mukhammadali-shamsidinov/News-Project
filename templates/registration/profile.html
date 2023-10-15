@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Login{% endblock title %}
+{% block content %}
+<div class="container">
+    <img width="300" class="rounded m-3" src="{{ profile.photo.url }}" alt="">
+  <h3>Welcome {{user.username}}</h3>
+  <label for="">username</label>
+  <input type="text" value="{{user.username}}" disabled><br>
+  <label for="">email</label>
+  <input type="text" value="{{user.email}}" disabled><br>
+  <label for="">ism</label>
+  <input type="text" value="{{user.first_name}}" readonly><br>
+  <label for="">Familya</label>
+  <input type="text" value="{{user.last_name}}" readonly>
+ <br>
+    <a href="{% url 'edit_profile_page' %}">Edit Profile</a>
+ <a href="{% url 'logout' %}" class="btn btn-danger d-block">chiqish</a>
+    <a href="{% url 'password_change' %}" color="red">Parolni alishtirish</a>
+</div>
+
+{% endblock content %}

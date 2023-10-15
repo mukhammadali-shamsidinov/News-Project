@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Login{% endblock title %}
+{% block content %}
+<div class="container">
+  <form id="myForm" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+      <p>Parolni unutgan bo'lsangiz uni <a class="text-primary" href="{% url 'password_reset' %}">Tiklang</a></p>
+        <a href="{% url 'register' %}" class="btn btn-info">Sing Up</a>
+    <button type="submit" class="btn btn-success mt-3">Login</button>
+ </form>
+</div>
+
+{% endblock content %}

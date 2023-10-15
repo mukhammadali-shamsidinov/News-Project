@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Delete{% endblock title %}
+{% block content %}
+<div class="container">
+  <form method="post">{% csrf_token %}
+    <p>Malumotni ochirasizmi?</p>
+    <button type="submit" class="btn btn-danger">Tasdiqlash</button>
+  </form>
+</div>
+{% endblock content %}

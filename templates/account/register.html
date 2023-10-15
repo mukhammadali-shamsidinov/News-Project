@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Login{% endblock title %}
+{% block content %}
+<div class="container">
+  <form id="myForm" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+      {{ profile.as_p }}
+      <p>Ro'yxatdan o'tgan bo'sangiz <a class="text-primary" href="{% url 'login' %}">qiling</a></p>
+    
+    <button type="submit" class="btn btn-success mt-3">Sing Up</button>
+ </form>
+</div>
+
+{% endblock content %}

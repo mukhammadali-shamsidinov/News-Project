@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Create{% endblock title %}
+{% block content %}
+<div class="container">
+  <form id="myForm" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="button" onclick="generateSlug()" class="btn btn-danger mt-3">Generate Slug</button>
+    <button type="submit" class="btn btn-success mt-3">create</button>
+ </form>
+</div>
+<script>
+  function generateSlug() {
+     const titleInput = document.getElementById('id_title').value; // Assuming the title input field has the ID 'id_title'
+     const slug = titleInput
+        .toLowerCase()
+        .replace(/[^a-zA-Z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+
+     // Assuming you have an input for the slug, you can set its value like this:
+     document.getElementById('id_slug').value = slug; // Assuming the slug input field has the ID 'id_slug'
+  }
+</script>
+{% endblock content %}
